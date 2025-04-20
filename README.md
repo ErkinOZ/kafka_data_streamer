@@ -29,3 +29,4 @@ Ensure the following tools are installed:
 Use Docker-Compose to start Kafka and Zookeeper:
    ```bash
    docker-compose up -d
+Ensure Kafka is accessible at localhost:9092
