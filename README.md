@@ -20,3 +20,13 @@ The project consists of the following components:
    ```bash
    git clone https://github.com/yourusername/real-time-telecom.git
    cd real-time-telecom
+2. Install prerequisites
+Ensure the following tools are installed:
+
+Python 3.8+
+Docker and Docker-Compose
+Kafka and Zookeeper
+3. Start Kafka and Zookeeper
+Use Docker-Compose to start Kafka and Zookeeper:
+   ```bash
+   docker-compose up -d
