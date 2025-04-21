@@ -11,4 +11,4 @@ The project consists of the following components:
 
 ## Set up a virtual machine with Ubuntu Linux 20.04 using Oracle VirtualBox
 
-![Uploading image.png…]()
+![Снимок экрана 2025-04-20 204035](https://github.com/user-attachments/assets/313cde04-e4a0-4597-a030-5c6e13e50e56)
