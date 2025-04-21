@@ -272,3 +272,21 @@ kafka-topics --describe --topic test-topic-1 --bootstrap-server localhost:9092
 
 Please ignore the other topics — they were created during earlier test runs.
 
+5. Produce & Consume Messages
+
+Start a producer in kafka container:
+
+```bash
+
+Start a producer:
+
+kafka-console-producer --topic test-topic-1 --bootstrap-server localhost:9092
+
+Start a consumer (in a second terminal):
+
+kafka-console-consumer --topic test-topic-1 --bootstrap-server localhost:9092 --from-beginning
+
+```
+![Screenshot from 2025-04-20 22-26-48](https://github.com/user-attachments/assets/b6f402fd-87a1-4d9a-825a-6c515fd52cde)
+
+
