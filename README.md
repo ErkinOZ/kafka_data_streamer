@@ -168,7 +168,22 @@ psql -h localhost -U dev -d demo
 
 -d demo — connects to the demo database
 
+
+and Run a Test Query to Verify
+
+SELECT version();
+
+Bonus: Create a test table (optional):
+
+CREATE TABLE test_table (id SERIAL PRIMARY KEY, name TEXT);
+INSERT INTO test_table (name) VALUES ('Kafka Test');
+
+SELECT * FROM test_table;
+
 ```
+
+![Screenshot from 2025-04-20 22-03-40](https://github.com/user-attachments/assets/f6ed2195-866b-40ef-add9-9fa407c961ac)
+
 
 
 
