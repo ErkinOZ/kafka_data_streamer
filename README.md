@@ -302,3 +302,27 @@ A producer is a client or service that sends (publishes) data to Kafka topics. I
 Consumer:
 A consumer is a client or service that subscribes to topics and reads data from them. It processes or stores the data, depending on the use case (e.g., logging, analytics, storage, etc.).
 
+## Set Up Python Virtual Environment (Before We Work in scripts/)
+
+Before we move into the scripts/ folder where we’ll write Python files containing the core logic for handling telecom client data, we need to set up a clean Python virtual environment. This ensures that all dependencies are isolated and won’t affect the global system environment.
+
+```bash
+
+cd ~/devops-data-city
+
+python3 -m venv venv
+
+```
+This creates a folder named venv that contains a standalone Python environment.
+
+Activate the Virtual Environment
+
+```bash
+
+source venv/bin/activate
+
+```
+
+
+
+
