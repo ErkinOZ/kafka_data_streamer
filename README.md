@@ -109,4 +109,6 @@ This folder contains all the Python scripts used in the project. It includes the
 2. docker-compose/ (or docker-compose.yml)
 Purpose:
 This folder or file is used to define and manage the Docker containers required for the project. It simplifies the setup of services like Kafka, Zookeeper, and PostgreSQL.
+![Screenshot from 2025-04-20 21-28-26](https://github.com/user-attachments/assets/e6a7bcca-9dc5-4bd3-8a3e-4def8c06609c)
+
 
