@@ -323,6 +323,7 @@ source venv/bin/activate
 
 ```
 
+![Screenshot from 2025-04-20 22-56-23](https://github.com/user-attachments/assets/1aa8ee49-9027-46b9-9586-7f280fea8e07)
 
 
 
