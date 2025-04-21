@@ -11,3 +11,4 @@ The project consists of the following components:
 
 ## Set up a virtual machine with Ubuntu Linux 20.04 using Oracle VirtualBox
 
+![Uploading image.png…]()
