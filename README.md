@@ -28,4 +28,50 @@ Checked VM health/status(By default, only top is available. You can install htop
 ```
 ![Screenshot from 2025-04-20 20-50-36](https://github.com/user-attachments/assets/f9dbea89-b666-45ac-a2b6-4b20aa04e7aa)
 
+## Install Docker, Docker Compose, Grant User Permissions & Set Up Vim
+---
 
+## 1. Install Docker
+
+```bash
+sudo apt update
+sudo apt install -y docker.io
+
+sudo systemctl enable docker
+sudo systemctl start docker
+```
+
+## 2. Add Your User to Docker Group
+
+```bash
+
+sudo usermod -aG docker $USER
+
+newgrp docker
+
+```
+
+
+## 3. Install Docker Compose
+```bash
+
+From APT:
+
+sudo apt install -y docker-compose
+
+or Latest version from GitHub:
+
+sudo curl -L "https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+
+sudo chmod +x /usr/local/bin/docker-compose
+
+
+```
+
+## 4. Install Vim (because "nano" is not convenient for me)
+```bash
+
+sudo apt install -y vim
+
+
+```
