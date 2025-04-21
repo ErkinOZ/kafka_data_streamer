@@ -95,6 +95,12 @@ groups
 
 I won't include basic checks like verifying the Vim version, but we did confirm that Docker is installed and running properly, and that the user is in the docker group with access to run Docker commands.
 
-### Verification: Docker, Docker Compose, Vim Installation & User Access
+## Create Project Directory Structure
+
+```bash
+
+mkdir -p ~/devops-data-city/{docker-compose,scripts}
+
+```
 
 
