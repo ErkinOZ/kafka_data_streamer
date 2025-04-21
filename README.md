@@ -325,5 +325,28 @@ source venv/bin/activate
 
 ![Screenshot from 2025-04-20 22-56-23](https://github.com/user-attachments/assets/1aa8ee49-9027-46b9-9586-7f280fea8e07)
 
+I won’t walk through the installation of each individual library step by step. Instead, here is a list of all required packages that you can install in one command using pip:
 
+
+```bash
+
+pip install kafka-python psycopg2 pandas requests
+
+```
+
+After installing the packages, you can save the full list of installed libraries into a requirements.txt file using the command below:
+
+```bash
+
+pip freeze > requirements.txt
+
+```
+This allows you to easily reproduce the environment later or share it with others using:
+
+```bash
+
+pip install -r requirements.txt
+
+```
+![Screenshot from 2025-04-20 23-02-06](https://github.com/user-attachments/assets/7a174bfb-5586-4ec9-abd5-2f71645b878c)
 
