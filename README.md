@@ -184,6 +184,89 @@ SELECT * FROM test_table;
 
 ![Screenshot from 2025-04-20 22-03-40](https://github.com/user-attachments/assets/f6ed2195-866b-40ef-add9-9fa407c961ac)
 
+As we can see, the PostgreSQL database has been successfully deployed in a Docker container using a YAML file, and psql commands are working as expected.
 
 
+## Kafka Service Definition
+
+
+Create the Kafka YAML File, Start Kafka and Zookeeper with Docker Compose, Verify Container Status
+
+1. Create a yaml file and write it to the /docker-compose directory:
+
+
+
+
+```yaml
+version: "3.8"
+
+services:
+  zookeeper:
+    image: confluentinc/cp-zookeeper:7.3.2   # Official Zookeeper image from Confluent
+    container_name: zookeeper
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 2181           # Port to connect to Zookeeper
+      ZOOKEEPER_TICK_TIME: 2000             # Basic time unit in milliseconds used by Zookeeper
+    ports:
+      - "2181:2181"                         # Expose port 2181 for external access
+
+  kafka:
+    image: confluentinc/cp-kafka:7.3.2      # Official Kafka image from Confluent
+    container_name: kafka
+    depends_on:
+      - zookeeper                           # Kafka depends on Zookeeper service
+    ports:
+      - "9092:9092"                         # Expose Kafka port for external access
+    environment:
+      KAFKA_BROKER_ID: 1                    # Unique ID for the Kafka broker
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181  # Address of the Zookeeper instance
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://localhost:9092  # External address for clients to connect
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT  # Map listener names to security protocols
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1   # Number of replicas for internal Kafka topics like offsets
+
+```
+2. Start Kafka and Zookeeper with Docker Compose
+
+```bash
+
+docker-compose -f docker-compose/kafka.yml up -d
+
+```
+
+3. Verify Container Status
+ 
+```bash
+
+docker ps --filter "name=kafka"
+docker ps --filter "name=zookeeper"
+
+docker inspect -f '{{.State.Status}}' kafka
+docker inspect -f '{{.State.Status}}' zookeeper
+
+docker logs kafka
+docker logs zookeeper
+
+```
+4. Basic Kafka Commands (inside the container)
+
+```bash
+
+Enter Kafka container:
+
+docker exec -it kafka bash
+
+Create a topic:
+
+kafka-topics --create --topic test-topic-1 --bootstrap-server localhost:9092 --partitions 1 --replication-factor 1
+
+List topics:
+
+kafka-topics --list --bootstrap-server localhost:9092
+
+Describe a topic:
+
+kafka-topics --describe --topic test-topic-1 --bootstrap-server localhost:9092
+
+```
+![Screenshot from 2025-04-20 22-18-38](https://github.com/user-attachments/assets/97cbfeac-7527-45b0-83d1-833d75be4773)
 
