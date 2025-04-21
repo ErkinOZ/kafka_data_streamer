@@ -19,3 +19,13 @@ Checking versions and the status of the virtual machine on Linux:
 ```
 
 ![Screenshot from 2025-04-20 20-45-45](https://github.com/user-attachments/assets/98407359-4117-43b6-b667-c07c8e574ffc)
+
+Checked VM health/status(By default, only top is available. You can install htop using the following command: sudo apt update && sudo apt install htop -y
+):
+
+```bash
+   htop
+```
+![Screenshot from 2025-04-20 20-50-36](https://github.com/user-attachments/assets/f9dbea89-b666-45ac-a2b6-4b20aa04e7aa)
+
+
