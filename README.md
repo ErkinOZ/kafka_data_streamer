@@ -155,5 +155,20 @@ docker inspect -f '{{.State.Status}}' postgres
 
 ![Screenshot from 2025-04-20 21-50-34](https://github.com/user-attachments/assets/aa69f49c-e28d-4bba-875e-3daf3268d6cf)
 
+3. Once we confirm that the PostgreSQL Docker container is in a running state, it means the service has started successfully.
+Now we can proceed to verify the PostgreSQL instance by connecting to it via psql and executing a simple SELECT query to ensure everything is working as expected.
+
+```bash
+
+psql -h localhost -U dev -d demo
+
+-h localhost — connects to the PostgreSQL server running on your local machine
+
+-U dev — uses the dev user to authenticate
+
+-d demo — connects to the demo database
+
+```
+
 
 
