@@ -102,5 +102,11 @@ I won't include basic checks like verifying the Vim version, but we did confirm 
 mkdir -p ~/devops-data-city/{docker-compose,scripts}
 
 ```
+1. scripts/
+Purpose:
+This folder contains all the Python scripts used in the project. It includes the logic for data processing, API creation, and dashboard visualization.
 
+2. docker-compose/ (or docker-compose.yml)
+Purpose:
+This folder or file is used to define and manage the Docker containers required for the project. It simplifies the setup of services like Kafka, Zookeeper, and PostgreSQL.
 
