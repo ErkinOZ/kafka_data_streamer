@@ -9,3 +9,5 @@ The project consists of the following components:
 - **Streamlit Dashboard**: Visualizes real-time data with interactive maps and metrics.
 - **Python**: Implements data processing, Kafka integration, database operations, API, and dashboard.
 
+## Set up a virtual machine with Ubuntu Linux 20.04 using Oracle VirtualBox
+
