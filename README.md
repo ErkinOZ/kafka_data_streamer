@@ -7,5 +7,5 @@ The project consists of the following components:
 - **PostgreSQL Database**: Stores user activity logs with conflict resolution for updates.
 - **FastAPI Backend**: Provides RESTful APIs for accessing user activity data.
 - **Streamlit Dashboard**: Visualizes real-time data with interactive maps and metrics.
-- **Python**: Python: Implements data processing, Kafka integration, database operations, API, and dashboard.
+- **Python**: Implements data processing, Kafka integration, database operations, API, and dashboard.
 
