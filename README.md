@@ -350,3 +350,87 @@ pip install -r requirements.txt
 ```
 ![Screenshot from 2025-04-20 23-02-06](https://github.com/user-attachments/assets/7a174bfb-5586-4ec9-abd5-2f71645b878c)
 
+
+## Navigate to scripts/ and Create the First Python Producer
+Now let's move into the scripts/ directory and create our first Python script. This script will simulate user registrations for a telecom company and send the generated data to a Kafka topic named user-registration.
+
+
+```bash
+
+cd ~/devops-data-city/scripts
+
+Create a Python file:
+
+vim user_producer.py
+
+and add this code
+
+```
+
+```python
+
+
+from kafka import KafkaProducer
+from faker import Faker
+import json
+import random
+import time
+from datetime import datetime
+
+
+fake = Faker()
+
+#Configure Kafka producer with the appropriate settings
+producer = KafkaProducer(
+    bootstrap_servers='localhost:9092',  #Brokker Address
+    value_serializer=lambda v: json.dumps(v).encode('utf-8')
+)
+
+#Define possible values for user attributes
+genders = ['Male', 'Female']
+devices = ['iPhone 13', 'Samsung S22', 'Xiaomi Redmi Note 11', 'OnePlus 10', 'Google Pixel 7']
+tariffs = ['Unlimited Max', 'Basic 5GB', 'Night Surfer', 'Weekend Plan', 'Student Pack']
+statuses = ['active', 'pending', 'inactive']
+
+#Generate and send 20 user registration events
+for user_id in range(1, 21):
+    #Randomly select gender and generate a name based on the gender
+    gender = random.choice(genders)
+    name = fake.first_name_male() if gender == 'Male' else fake.first_name_female()
+
+    #Create a dictionary with user data
+    user_data = {
+        "user_id": user_id,
+        "name": name,
+        "age": random.randint(18, 65),
+        "gender": gender,
+        "state": fake.state(),
+        "city": fake.city(),
+        "device": random.choice(devices),
+        "tariff": random.choice(tariffs),
+        "connection_date": datetime.now().strftime("%Y-%m-%d"),
+        "balance_usd": round(random.uniform(0, 100), 2),
+        "status": random.choice(statuses)
+    }
+
+    #Send the user data to the Kafka topic 'user-registration'
+    producer.send('user-registration', value=user_data)
+    print(f"[✔] Sent: {user_data}")
+
+    time.sleep(1)
+
+#Ensure all messages are sent before exiting
+producer.flush()
+#print("All 20 users successfully sent.")
+
+```
+
+This script does the following:
+- Generates fake telecom user data using the Faker library
+- Sends 20 unique user registration events to the Kafka topic user-registration
+- Uses the kafka-python library to handle Kafka message production
+- Waits 1 second between messages to simulate real-time user onboarding
+- Flushes the producer at the end to ensure all messages are delivered
+
+![Screenshot from 2025-04-20 23-13-28](https://github.com/user-attachments/assets/e1432fae-11f5-438f-ac64-689c114ec7fc)
+
