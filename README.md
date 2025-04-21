@@ -114,7 +114,7 @@ This folder or file is used to define and manage the Docker containers required 
 
 ## Deployed a PostgreSQL database using a YAML-based Docker Compose file to store data received from Kafka.
 
-Create a yaml file and write it to the /docker-compose directory:
+1. Create a yaml file and write it to the /docker-compose directory:
 
 ```yaml
 version: "3.8"
@@ -138,4 +138,22 @@ volumes:
 
 ```
 ![Screenshot from 2025-04-20 21-41-58](https://github.com/user-attachments/assets/6ed59869-f679-4c97-b799-096ee8d850ed)
+
+2. Now let's run the Docker Compose command using the file we created to start the PostgreSQL container on port 5432 (5432 the default port for PostgreSQL databases).
+
+```bash
+
+docker-compose -f docker-compose/postgres.yml up -d
+
+then the container status and its condition are checked:
+
+docker ps --filter "name=postgres"
+
+docker inspect -f '{{.State.Status}}' postgres
+(I find it convenient to use filters with Docker commands because I want to target specific containers)
+```
+
+![Screenshot from 2025-04-20 21-50-34](https://github.com/user-attachments/assets/aa69f49c-e28d-4bba-875e-3daf3268d6cf)
+
+
 
