@@ -15,4 +15,4 @@ The project consists of the following components:
 
 Checking versions and the status of the virtual machine on Linux:
 ```bash
-   cat etc/os-release
+   cat /etc/os-release
