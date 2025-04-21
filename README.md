@@ -86,8 +86,6 @@ and Check Docker Service Status:
 sudo systemctl status docker
 
 ```
-
-![Screenshot from 2025-04-20 21-03-28](https://github.com/user-attachments/assets/440d5aa0-a88f-4175-b63b-7a08339e4373)
-
+![Screenshot from 2025-04-20 21-10-15](https://github.com/user-attachments/assets/f42479ba-8b02-44e5-8e84-4498e9d53aad)
 
 
