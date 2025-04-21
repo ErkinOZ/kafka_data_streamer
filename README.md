@@ -289,4 +289,16 @@ kafka-console-consumer --topic test-topic-1 --bootstrap-server localhost:9092 --
 ```
 ![Screenshot from 2025-04-20 22-26-48](https://github.com/user-attachments/assets/b6f402fd-87a1-4d9a-825a-6c515fd52cde)
 
+As you can see, Kafka is actively running and functioning correctly on the test topic.
+
+What Are Topics, Producers, and Consumers?
+
+Topic:
+A topic in Kafka is a named channel where data is published. Think of it as a logical stream or category for messages. Producers write messages to a topic, and consumers read messages from it.
+
+Producer:
+A producer is a client or service that sends (publishes) data to Kafka topics. It could be anything — a microservice, an IoT device, or a data pipeline writing events to Kafka.
+
+Consumer:
+A consumer is a client or service that subscribes to topics and reads data from them. It processes or stores the data, depending on the use case (e.g., logging, analytics, storage, etc.).
 
