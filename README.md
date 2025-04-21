@@ -16,3 +16,4 @@ The project consists of the following components:
 Checking versions and the status of the virtual machine on Linux:
 ```bash
    cat /etc/os-release
+![Screenshot from 2025-04-20 20-45-45](https://github.com/user-attachments/assets/98407359-4117-43b6-b667-c07c8e574ffc)
