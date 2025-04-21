@@ -270,3 +270,5 @@ kafka-topics --describe --topic test-topic-1 --bootstrap-server localhost:9092
 ```
 ![Screenshot from 2025-04-20 22-18-38](https://github.com/user-attachments/assets/97cbfeac-7527-45b0-83d1-833d75be4773)
 
+Please ignore the other topics — they were created during earlier test runs.
+
