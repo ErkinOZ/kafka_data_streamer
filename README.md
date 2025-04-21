@@ -114,6 +114,8 @@ This folder or file is used to define and manage the Docker containers required 
 
 ## Deployed a PostgreSQL database using a YAML-based Docker Compose file to store data received from Kafka.
 
+Create a yaml file and write it to the /docker-compose directory:
+
 ```yaml
 version: "3.8"
 
@@ -135,4 +137,5 @@ volumes:
   pgdata:
 
 ```
+![Screenshot from 2025-04-20 21-41-58](https://github.com/user-attachments/assets/6ed59869-f679-4c97-b799-096ee8d850ed)
 
