@@ -34,6 +34,9 @@ Checked VM health/status(By default, only top is available. You can install htop
 
 ## But after working several times on the virtual machine on my laptop, it started to slow down because Kafka and other components require decent resources. So I ended up installing everything directly on my laptop, skipping the VM for convenience.
 
+![Screenshot from 2025-05-03 19-52-26](https://github.com/user-attachments/assets/393380ab-2bc1-4e03-b65a-86accdf5ae61)
+
+
 
 
 ## Install Docker, Docker Compose, Grant User Permissions & Set Up Vim
