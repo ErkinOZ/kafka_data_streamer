@@ -162,6 +162,9 @@ docker inspect -f '{{.State.Status}}' postgres
 Before accessing the PostgreSQL database and running the psql command, you need to install the client that allows you to create a database and execute PostgreSQL SQL commands.
 ![Screenshot from 2025-05-03 19-03-18](https://github.com/user-attachments/assets/896829d6-9a96-4089-a11f-c16b44008916)
 
+![Screenshot from 2025-05-03 19-07-17](https://github.com/user-attachments/assets/7aadc418-eeb3-4541-9d62-e3f876b22af9)
+
+
 
 3. Once we confirm that the PostgreSQL Docker container is in a running state, it means the service has started successfully.
 Now we can proceed to verify the PostgreSQL instance by connecting to it via psql and executing a simple SELECT query to ensure everything is working as expected.
