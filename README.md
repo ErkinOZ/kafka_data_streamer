@@ -159,7 +159,7 @@ docker inspect -f '{{.State.Status}}' postgres
 ![Screenshot from 2025-04-20 21-50-34](https://github.com/user-attachments/assets/aa69f49c-e28d-4bba-875e-3daf3268d6cf)
 
 
-!Before accessing the PostgreSQL database and running the psql command, you need to install the client that allows you to create a database and execute PostgreSQL SQL commands.
+Before accessing the PostgreSQL database and running the psql command, you need to install the client that allows you to create a database and execute PostgreSQL SQL commands.
 ![Screenshot from 2025-05-03 19-03-18](https://github.com/user-attachments/assets/896829d6-9a96-4089-a11f-c16b44008916)
 
 
