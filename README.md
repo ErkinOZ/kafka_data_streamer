@@ -444,3 +444,14 @@ You can now verify the messages were published to the topic using Kafka's consol
 
 ![output2](https://github.com/user-attachments/assets/d03ecd51-eb72-4afa-bb5a-38761371671f)
 
+After running the Python Kafka producer, we can see that messages were successfully published to the topic user-registration. This is confirmed by using the kafka-console-consumer command from within the Kafka Docker container — we see the exact JSON messages sent from the producer.
+
+![Screenshot from 2025-05-04 18-11-02](https://github.com/user-attachments/assets/d7a3097d-42b3-4cc2-8d45-5aaa47e8bd72)
+
+Error: Consumer group 'user-registration-group' does not exist.
+
+This happens because no consumer has yet subscribed to the topic using that group ID. Kafka only tracks lag and offsets after a consumer with the specified group.id actually connects and starts reading messages (and commits offsets).
+
+Next step: write and run a Kafka consumer in Python with group_id='user-registration-group' so that Kafka starts tracking this group and we can then monitor offsets and lag.
+
+
