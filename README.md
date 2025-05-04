@@ -354,10 +354,6 @@ I won’t walk through the installation of each individual library step by step.
 pip install kafka-python psycopg2 pandas requests
 
 ```
-
-![Screenshot from 2025-04-20 23-02-06](https://github.com/user-attachments/assets/7a174bfb-5586-4ec9-abd5-2f71645b878c)
-
-
 ## Navigate to scripts/ and Create the First Python Producer
 Now let's move into the scripts/ directory and create our first Python script. This script will simulate user registrations for a telecom company and send the generated data to a Kafka topic named user-registration.
 
