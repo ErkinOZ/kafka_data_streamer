@@ -166,7 +166,7 @@ docker inspect -f '{{.State.Status}}' postgres
 (I find it convenient to use filters with Docker commands because I want to target specific containers)
 ```
 
-![Screenshot from 2025-04-20 21-50-34](https://github.com/user-attachments/assets/aa69f49c-e28d-4bba-875e-3daf3268d6cf)
+![Screenshot from 2025-05-03 20-16-27](https://github.com/user-attachments/assets/6bc9c336-0ed9-49e1-a961-da2940b0cbff)
 
 
 Before accessing the PostgreSQL database and running the psql command, you need to install the client that allows you to create a database and execute PostgreSQL SQL commands.
