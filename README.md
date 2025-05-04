@@ -435,5 +435,5 @@ This script does the following:
 - Waits 1 second between messages to simulate real-time user onboarding
 - Flushes the producer at the end to ensure all messages are delivered
 
-![Screenshot from 2025-04-20 23-13-28](https://github.com/user-attachments/assets/e1432fae-11f5-438f-ac64-689c114ec7fc)
+![Screenshot from 2025-05-03 21-19-58](https://github.com/user-attachments/assets/cb2a703f-4cd9-4cf7-8c94-4745b9b73e1f)
 
