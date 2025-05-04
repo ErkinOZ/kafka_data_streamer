@@ -344,7 +344,7 @@ source venv/bin/activate
 
 ```
 
-![Screenshot from 2025-04-20 22-56-23](https://github.com/user-attachments/assets/1aa8ee49-9027-46b9-9586-7f280fea8e07)
+![Screenshot from 2025-05-03 21-02-02](https://github.com/user-attachments/assets/7afffe86-e097-46e5-a590-e7f56177fa7d)
 
 I won’t walk through the installation of each individual library step by step. Instead, here is a list of all required packages that you can install in one command using pip:
 
