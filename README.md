@@ -122,7 +122,7 @@ This folder contains all the Python scripts used in the project. It includes the
 Purpose:
 This folder or file is used to define and manage the Docker containers required for the project. It simplifies the setup of services like Kafka, Zookeeper, and PostgreSQL.
 
-![Screenshot from 2025-04-20 21-28-26](https://github.com/user-attachments/assets/e6a7bcca-9dc5-4bd3-8a3e-4def8c06609c)
+![Screenshot from 2025-05-03 20-12-58](https://github.com/user-attachments/assets/205d8963-1118-4fd5-a3a5-0c46bad5f45f)
 
 ## Deployed a PostgreSQL database using a YAML-based Docker Compose file to store data received from Kafka.
 
