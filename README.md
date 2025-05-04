@@ -564,3 +564,146 @@ We also verified the table using DBeaver to ensure the data was correctly insert
 
 ![Screenshot from 2025-05-04 19-16-52](https://github.com/user-attachments/assets/827c4dc1-d90b-4de9-937b-db16eaaec554)
 
+## Now let's write a Python script that will generate activity based on base stations, using the table we previously created and populated with data about registered users, including their state and other details. We'll first write a producer to send this activity data to a Kafka topic, and then a consumer to read from that topic and store the data in a PostgreSQL database.
+
+Consumer: user_activity_producer.py
+```bash
+
+from kafka import KafkaProducer
+import psycopg2
+import json
+import random
+import time
+from datetime import datetime
+from faker import Faker
+
+#Initialization
+fake = Faker()
+
+#Connecting to PostgreSQL to fetch user_id
+conn = psycopg2.connect(
+    dbname='demo',
+    user='dev',
+    password='dev123',
+    host='localhost',
+    port='5432'
+)
+cursor = conn.cursor()
+cursor.execute("SELECT user_id FROM user_registration_log")
+user_ids = [row[0] for row in cursor.fetchall()]
+
+if not user_ids:
+    print("No users found in the user_registration_log table.")
+    exit(1)
+
+print(f"[✔] Retrieved {len(user_ids)} user_id(s) from PostgreSQL.")
+
+#Configuring Kafka Producer
+producer = KafkaProducer(
+    bootstrap_servers='localhost:9092',
+    value_serializer=lambda v: json.dumps(v).encode('utf-8')
+)
+
+#Possible activity parameters
+basestations = [f"BS-{i}" for i in range(1, 6)]
+hostnames = ['google.com', 'youtube.com', 'instagram.com', 'chat.openai.com', 'facebook.com']
+
+#Generating activity in a loop
+while True:
+    user_id = random.choice(user_ids)
+    lat, lng = float(fake.latitude()), float(fake.longitude())
+
+    activity = {
+        "user_id": user_id,
+        "datetime": datetime.now().isoformat(),
+        "basestation": random.choice(basestations),
+        "hostname": random.choice(hostnames),
+        "lat": lat,
+        "long": lng
+    }
+
+    producer.send('user-activity', value=activity)
+    print(f"Sent: {activity}")
+    time.sleep(1)
+
+
+```
+
+Producer: user_activity_consumer.py
+```bash
+
+from kafka import KafkaConsumer
+import json
+import psycopg2
+from psycopg2 import OperationalError, IntegrityError
+
+#Connecting to PostgreSQL
+conn = psycopg2.connect(
+    dbname='demo',
+    user='dev',
+    password='dev123',
+    host='localhost',
+    port='5432'
+)
+cursor = conn.cursor()
+
+#Creating the activity table
+cursor.execute("""
+CREATE TABLE IF NOT EXISTS user_activity_log (
+    user_id INTEGER,
+    datetime TIMESTAMP,
+    basestation TEXT,
+    hostname TEXT,
+    lat DOUBLE PRECISION,
+    long DOUBLE PRECISION,
+    PRIMARY KEY (user_id, datetime)
+)
+""")
+conn.commit()
+
+#Configuring Kafka Consumer
+consumer = KafkaConsumer(
+    'user-activity',
+    bootstrap_servers='localhost:9092',
+    auto_offset_reset='earliest',
+    enable_auto_commit=False,
+    group_id='user-activity-group',
+    value_deserializer=lambda m: json.loads(m.decode('utf-8'))
+)
+
+print("Listening to Kafka topic: user-activity.")
+
+for message in consumer:
+    activity = message.value
+    print(f"Received: {activity}")
+
+    try:
+        cursor.execute("""
+            INSERT INTO user_activity_log (
+                user_id, datetime, basestation, hostname, lat, long
+            ) VALUES (%s, %s, %s, %s, %s, %s)
+            ON CONFLICT (user_id, datetime) DO UPDATE SET
+                basestation = EXCLUDED.basestation,
+                hostname = EXCLUDED.hostname,
+                lat = EXCLUDED.lat,
+                long = EXCLUDED.long
+        """, (
+            activity["user_id"],
+            activity["datetime"],
+            activity["basestation"],
+            activity["hostname"],
+            activity["lat"],
+            activity["long"]
+        ))
+
+        conn.commit()
+        consumer.commit()
+        print("Activity recorded/updated. Offset committed.")
+
+    except (OperationalError, IntegrityError) as e:
+        conn.rollback()
+        print(f"Error writing to PostgreSQL: {e}. Offset NOT committed.")
+
+
+```
+
