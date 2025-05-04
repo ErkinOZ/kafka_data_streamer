@@ -710,4 +710,4 @@ for message in consumer:
 
 ![output6](https://github.com/user-attachments/assets/1008c7f0-a40d-44f0-b3f2-e5e4ad9af4ab)
 
-The logs show that all messages were successfully consumed and written to PostgreSQL. Now let's check the PostgreSQL database to verify the data.
+The logs show that all messages were successfully consumed and written to PostgreSQL. Now let's check the PostgreSQL database to verify the data (I manually stopped the activity generation script myself)
