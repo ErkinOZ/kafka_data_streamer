@@ -505,7 +505,7 @@ print("Listening to Kafka. Updating or inserting data by user_id.")
 
 for message in consumer:
     user_data = message.value
-    print(f"[📥] Received: {user_data}")
+    print(f"Received: {user_data}")
 
     try:
         cursor.execute("""
