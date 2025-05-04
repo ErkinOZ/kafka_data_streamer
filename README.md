@@ -437,3 +437,7 @@ This script does the following:
 
 ![Screenshot from 2025-05-03 21-19-58](https://github.com/user-attachments/assets/cb2a703f-4cd9-4cf7-8c94-4745b9b73e1f)
 
+
+After running the user_registration_producer.py script, synthetic user registration data was successfully generated and sent to the Kafka topic named user-registration. Each record represents a unique user with attributes like name, age, gender, location, device, tariff, balance, and connection status.
+
+You can now verify the messages were published to the topic using Kafka's console consumer tool.
