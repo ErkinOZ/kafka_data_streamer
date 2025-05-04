@@ -289,7 +289,7 @@ Describe a topic:
 kafka-topics --describe --topic test-topic-1 --bootstrap-server localhost:9092
 
 ```
-![Screenshot from 2025-04-20 22-18-38](https://github.com/user-attachments/assets/97cbfeac-7527-45b0-83d1-833d75be4773)
+![Screenshot from 2025-05-03 20-32-12](https://github.com/user-attachments/assets/4e8deed9-5046-4023-b9b6-c6d469576523)
 
 Please ignore the other topics — they were created during earlier test runs.
 
