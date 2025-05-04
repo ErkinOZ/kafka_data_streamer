@@ -202,8 +202,8 @@ INSERT INTO test_table (name) VALUES ('Kafka Test');
 SELECT * FROM test_table;
 
 ```
+![Screenshot from 2025-05-03 20-21-07](https://github.com/user-attachments/assets/ae850f69-8b9f-408a-a234-0a4a7989a292)
 
-![Screenshot from 2025-04-20 22-03-40](https://github.com/user-attachments/assets/f6ed2195-866b-40ef-add9-9fa407c961ac)
 
 As we can see, the PostgreSQL database has been successfully deployed in a Docker container using a YAML file, and psql commands are working as expected.
 
