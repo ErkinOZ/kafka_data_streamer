@@ -102,8 +102,8 @@ and Verify that the user is in the docker group:
 groups
 
 ```
-![Screenshot from 2025-04-20 21-10-15](https://github.com/user-attachments/assets/f42479ba-8b02-44e5-8e84-4498e9d53aad)
-![Screenshot from 2025-04-20 21-15-40](https://github.com/user-attachments/assets/8da2983c-469e-4de0-ab06-f3dd7ceb8a15)
+
+![Screenshot from 2025-05-03 20-11-03](https://github.com/user-attachments/assets/cb947bb4-a58c-4a9b-ba43-2585421a0986)
 
 I won't include basic checks like verifying the Vim version, but we did confirm that Docker is installed and running properly, and that the user is in the docker group with access to run Docker commands.
 
