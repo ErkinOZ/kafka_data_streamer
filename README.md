@@ -551,3 +551,8 @@ for message in consumer:
 
 ![Screenshot from 2025-05-04 18-43-58](https://github.com/user-attachments/assets/39688d7c-7389-4377-9a4f-883834519554)
 
+Running the consumer code will read messages from the topic and write them to the PostgreSQL database.
+
+![output4](https://github.com/user-attachments/assets/d2ca110d-c825-4b83-b8c2-fff40cda921b)
+
+
