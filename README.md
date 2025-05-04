@@ -63,8 +63,6 @@ sudo usermod -aG docker $USER
 newgrp docker
 
 ```
-![output](https://github.com/user-attachments/assets/76fbdb74-fe36-4175-abbf-73ca7c0c4edb)
-
 
 ## 3. Install Docker Compose
 ```bash
