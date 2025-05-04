@@ -149,7 +149,8 @@ volumes:
   pgdata:
 
 ```
-![Screenshot from 2025-04-20 21-41-58](https://github.com/user-attachments/assets/6ed59869-f679-4c97-b799-096ee8d850ed)
+![Screenshot from 2025-05-03 20-14-19](https://github.com/user-attachments/assets/8f7e6401-343b-4771-8e6d-dd8368b9bf6a)
+
 
 2. Now let's run the Docker Compose command using the file we created to start the PostgreSQL container on port 5432 (5432 the default port for PostgreSQL databases).
 
