@@ -308,7 +308,7 @@ Start a consumer (in a second terminal):
 kafka-console-consumer --topic test-topic-1 --bootstrap-server localhost:9092 --from-beginning
 
 ```
-![Screenshot from 2025-04-20 22-26-48](https://github.com/user-attachments/assets/b6f402fd-87a1-4d9a-825a-6c515fd52cde)
+![output1](https://github.com/user-attachments/assets/d44fdca9-cc34-41f0-a35a-d9f7cb6d62f5)
 
 As you can see, Kafka is actively running and functioning correctly on the test topic.
 
