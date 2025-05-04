@@ -706,4 +706,8 @@ for message in consumer:
 
 
 ```
+## We created Python scripts for both the producer and the consumer to simulate user activity. Now we're running them together to demonstrate that they work simultaneously in a streaming setup.
 
+![output6](https://github.com/user-attachments/assets/1008c7f0-a40d-44f0-b3f2-e5e4ad9af4ab)
+
+The logs show that all messages were successfully consumed and written to PostgreSQL. Now let's check the PostgreSQL database to verify the data.
