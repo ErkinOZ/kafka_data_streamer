@@ -440,4 +440,7 @@ This script does the following:
 
 After running the user_registration_producer.py script, synthetic user registration data was successfully generated and sent to the Kafka topic named user-registration. Each record represents a unique user with attributes like name, age, gender, location, device, tariff, balance, and connection status.
 
-You can now verify the messages were published to the topic using Kafka's console consumer tool.
+You can now verify the messages were published to the topic using Kafka's console consumer tool. (I stopped the code myself so that all IDs up to 20 would not be created)
+
+![output2](https://github.com/user-attachments/assets/d03ecd51-eb72-4afa-bb5a-38761371671f)
+
