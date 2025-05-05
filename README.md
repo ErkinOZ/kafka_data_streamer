@@ -834,5 +834,20 @@ Running the code:
 
 ![output7](https://github.com/user-attachments/assets/4764fc74-da9b-40e9-a610-b755f3d8e342)
 
+After several tests and discussions with ChatGPT, I realized that querying PostgreSQL directly from Streamlit for real-time data is not efficient.
 
+A better architectural solution is:
+
+Streamlit should use FastAPI as a data source instead of connecting directly to PostgreSQL.
+
+Why this is the right approach:
+Clean separation of concerns: Streamlit handles the UI, FastAPI serves the data, PostgreSQL stores the data.
+
+Reduced database load: FastAPI can cache or filter data before sending it to the frontend.
+
+Improved security: No direct database access from the UI.
+
+Reusability: FastAPI can serve other clients (mobile apps, other dashboards).
+
+Scalability: FastAPI and Streamlit can be scaled independently.
 
