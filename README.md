@@ -963,3 +963,7 @@ http://localhost:8000/docs – Swagger UI (interactive API documentation):
 
 Yes, I could have installed a browser extension or formatted the JSON output in the API for better readability, but I decided not to spend time on that for now.
 
+## Now that we've set up the API application, we want the Streamlit app to fetch data from the API instead of querying PostgreSQL directly — this approach is more optimized and efficient.
+
+real_time_dashboard_via_api.py - Real-time Streamlit dashboard fetching and displaying user activity via API
+
