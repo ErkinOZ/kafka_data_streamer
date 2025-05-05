@@ -975,3 +975,8 @@ real_time_dashboard_via_api.py - Real-time Streamlit dashboard fetching and disp
 
 ![Screenshot from 2025-05-04 21-41-19](https://github.com/user-attachments/assets/1532b4c7-185d-4978-bbca-bb75962dc8aa)
 
+## A complete end-to-end pipeline is implemented — from logging subscriber activity to storing it in PostgreSQL. The data is then exposed via a FastAPI backend and visualized in Streamlit through API integration. The overall architecture is well-structured and logically designed, covering data generation, processing, storage, and presentation.
+There’s still room for improvement and optimization, but the current setup provides a solid and functional foundation.
+
+![outo_compressed](https://github.com/user-attachments/assets/b0b59e19-fd61-4bac-bcfb-cfb09c3160b0)
+
