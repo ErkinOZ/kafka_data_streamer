@@ -564,7 +564,7 @@ We also verified the table using DBeaver to ensure the data was correctly insert
 
 ![Screenshot from 2025-05-04 19-16-52](https://github.com/user-attachments/assets/827c4dc1-d90b-4de9-937b-db16eaaec554)
 
-## Now let's write a Python script that will generate activity based on base stations, using the table we previously created and populated with data about registered users, including their state and other details. We'll first write a producer to send this activity data to a Kafka topic, and then a consumer to read from that topic and store the data in a PostgreSQL database.
+## Let's write a Python script that generates activity based on base stations, using the table we previously created and populated with data about registered users, including their state and other details. We'll first write a producer to send this activity data to a Kafka topic, and then a consumer to read from that topic and store the data in a PostgreSQL database.
 
 Consumer: user_activity_producer.py
 ```bash
