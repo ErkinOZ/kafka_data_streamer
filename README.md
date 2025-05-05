@@ -711,3 +711,17 @@ for message in consumer:
 ![output6](https://github.com/user-attachments/assets/1008c7f0-a40d-44f0-b3f2-e5e4ad9af4ab)
 
 The logs show that all messages were successfully consumed and written to PostgreSQL. Now let's check the PostgreSQL database to verify the data (I manually stopped the activity generation script myself)
+
+Let's check the table directly using DBeaver by running a SELECT query.
+
+![Screenshot from 2025-05-04 20-01-25](https://github.com/user-attachments/assets/16739d0b-7860-47f8-93f4-341f80e15602)
+
+## Now we can join the user_registration_log table with the user_activity_log table using the user ID, so we get a complete picture of the registered users and their activity across base stations.
+
+![Screenshot from 2025-05-04 20-05-32](https://github.com/user-attachments/assets/437c69b3-bdea-4043-adce-ea8bf6950184)
+
+Joined user_registration_log and user_activity_log to display complete user activity details by base station, verified via DBeaver
+
+
+
+
