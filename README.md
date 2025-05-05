@@ -959,4 +959,5 @@ http://localhost:8000/activities – Get the latest 500 activity records:
 http://localhost:8000/activities/1 – Get all activity records for user ID 1:
 ![Screenshot from 2025-05-04 20-55-57](https://github.com/user-attachments/assets/fe571f2c-d4f6-4cb9-a556-71a8cfa2fbda)
 http://localhost:8000/docs – Swagger UI (interactive API documentation):
-![Screenshot from 2025-05-04 20-57-15](https://github.com/user-attachments/assets/8e02ae01-787a-4bf4-b9d2-77b734038a11)
+![Screenshot from 2025-05-04 20-54-46](https://github.com/user-attachments/assets/137e029d-1c6d-48d4-ad54-3cdcad721660)
+
