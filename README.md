@@ -973,7 +973,5 @@ real_time_dashboard_via_api.py - Real-time Streamlit dashboard fetching and disp
 
 ### Before demonstrating real-time activity updates, I'll clear the data in the database table to make it look clean.
 
-![Screenshot from 2025-05-04 21-40-40](https://github.com/user-attachments/assets/1c83aba5-2d47-4016-a972-ce0c91ec7a3e)
-
 ![Screenshot from 2025-05-04 21-41-19](https://github.com/user-attachments/assets/1532b4c7-185d-4978-bbca-bb75962dc8aa)
 
