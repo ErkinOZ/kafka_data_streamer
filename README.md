@@ -952,4 +952,11 @@ uvicorn main:app --reload
 ![output8](https://github.com/user-attachments/assets/19bf6899-0e77-45c9-af51-f093ecd95b91)
 
 
+http://localhost:8000/users – Get the list of all user IDs:
+![Screenshot from 2025-05-04 20-55-09](https://github.com/user-attachments/assets/1412334e-f4cd-433c-8013-b1ecaa523433)
+http://localhost:8000/activities – Get the latest 500 activity records:
+![Screenshot from 2025-05-04 20-55-18](https://github.com/user-attachments/assets/15e152c1-fbda-49e9-a22f-74a065a991d0)
+http://localhost:8000/activities/1 – Get all activity records for user ID 1:
+![Screenshot from 2025-05-04 20-55-57](https://github.com/user-attachments/assets/fe571f2c-d4f6-4cb9-a556-71a8cfa2fbda)
+http://localhost:8000/docs – Swagger UI (interactive API documentation):
 
