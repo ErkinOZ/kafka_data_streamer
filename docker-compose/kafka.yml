@@ -1,0 +1,26 @@
+version: "3.8"
+
+services:
+  zookeeper:
+    image: confluentinc/cp-zookeeper:7.3.2   # Official Zookeeper image from Confluent
+    container_name: zookeeper
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 2181           # Port to connect to Zookeeper
+      ZOOKEEPER_TICK_TIME: 2000             # Basic time unit in milliseconds used by Zookeeper
+    ports:
+      - "2181:2181"                         # Expose port 2181 for external access
+
+  kafka:
+    image: confluentinc/cp-kafka:7.3.2      # Official Kafka image from Confluent
+    container_name: kafka
+    depends_on:
+      - zookeeper                           # Kafka depends on Zookeeper service
+    ports:
+      - "9092:9092"                         # Expose Kafka port for external access
+    environment:
+      KAFKA_BROKER_ID: 1                    # Unique ID for the Kafka broker
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181  # Address of the Zookeeper instance
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://localhost:9092  # External address for clients to connect
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT  # Map listener names to security protocols
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1   # Number of replicas for internal Kafka topics like offsets
+
