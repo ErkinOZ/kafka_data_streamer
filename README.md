@@ -948,3 +948,8 @@ def user_activity(user_id: int):
 uvicorn main:app --reload
 
 ```
+
+![output8](https://github.com/user-attachments/assets/19bf6899-0e77-45c9-af51-f093ecd95b91)
+
+
+
