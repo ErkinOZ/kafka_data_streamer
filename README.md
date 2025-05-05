@@ -830,5 +830,9 @@ st.dataframe(filtered_df, use_container_width=True)
 
 ```
 
+Running the code:
+
+![output7](https://github.com/user-attachments/assets/4764fc74-da9b-40e9-a610-b755f3d8e342)
+
 
 
