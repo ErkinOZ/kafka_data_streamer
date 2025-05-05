@@ -851,3 +851,94 @@ Reusability: FastAPI can serve other clients (mobile apps, other dashboards).
 
 Scalability: FastAPI and Streamlit can be scaled independently.
 
+## Creating the API (FastAPI)
+
+1) db.py - Connecting to PostgreSQL
+
+```bash
+
+from sqlalchemy import create_engine
+
+DATABASE_URL = "postgresql://dev:dev123@localhost:5432/demo"
+engine = create_engine(DATABASE_URL)
+
+```
+
+2) crud.py — logic for retrieving data from the database
+
+
+```bash
+
+import pandas as pd
+from db import engine
+
+def get_all_activities(limit=500):
+    query = f"""
+        SELECT 
+            a.user_id, r.name, r.city, r.device, r.tariff,
+            a.datetime, a.basestation, a.hostname, a.lat, a.long
+        FROM user_activity_log a
+        JOIN user_registration_log r ON a.user_id = r.user_id
+        ORDER BY a.datetime DESC
+        LIMIT {limit}
+    """
+    return pd.read_sql(query, engine)
+
+def get_activities_by_user(user_id: int):
+    query = f"""
+        SELECT 
+            a.user_id, r.name, r.city, r.device, r.tariff,
+            a.datetime, a.basestation, a.hostname, a.lat, a.long
+        FROM user_activity_log a
+        JOIN user_registration_log r ON a.user_id = r.user_id
+        WHERE a.user_id = {user_id}
+        ORDER BY a.datetime DESC
+    """
+    return pd.read_sql(query, engine)
+
+def get_user_ids():
+    query = "SELECT DISTINCT user_id FROM user_registration_log ORDER BY user_id"
+    df = pd.read_sql(query, engine)
+    return df["user_id"].tolist()
+
+
+```
+
+crud.py defines SQL queries to retrieve user activity data from PostgreSQL using pandas.
+
+Uses JOIN to combine user_activity_log and user_registration_log
+
+Executes SQL queries with pandas.read_sql()
+
+Filters, sorts, and limits results directly in SQL for performance
+
+3) main.py — FastAPI application
+Defines the API endpoints that serve user activity data retrieved from the database via crud.py. It acts as the backend for the frontend dashboard (e.g., Streamlit).
+
+```bash
+from fastapi import FastAPI
+from crud import get_all_activities, get_activities_by_user, get_user_ids
+
+app = FastAPI()
+
+@app.get("/")
+def root():
+    return {"message": "User Activity API is running"}
+
+@app.get("/users")
+def users():
+    return {"users": get_user_ids()}
+
+@app.get("/activities")
+def activities():
+    df = get_all_activities()
+    return df.to_dict(orient="records")
+
+@app.get("/activities/{user_id}")
+def user_activity(user_id: int):
+    df = get_activities_by_user(user_id)
+    return df.to_dict(orient="records")
+
+
+```
+
