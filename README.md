@@ -722,6 +722,15 @@ Let's check the table directly using DBeaver by running a SELECT query.
 
 Joined user_registration_log and user_activity_log to display complete user activity details by base station, verified via DBeaver
 
+## This service provides real-time monitoring of user activity based on data from PostgreSQL.
 
+1) Listens to PostgreSQL tables user_registration_log and user_activity_log
+2) Joins them by user_id
+3) Displays data in real time as a dashboard (e.g., in Streamlit)
+4) Continuously updates
 
-
+Build a Streamlit app that:
+1) Connects to PostgreSQL
+2) Performs a JOIN between two tables every X seconds
+3) Displays active users, activity by location, devices, domains, etc.
+4) Runs in auto-refresh mode
