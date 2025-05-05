@@ -961,3 +961,5 @@ http://localhost:8000/activities/1 – Get all activity records for user ID 1:
 http://localhost:8000/docs – Swagger UI (interactive API documentation):
 ![Screenshot from 2025-05-04 20-54-46](https://github.com/user-attachments/assets/137e029d-1c6d-48d4-ad54-3cdcad721660)
 
+Yes, I could have installed a browser extension or formatted the JSON output in the API for better readability, but I decided not to spend time on that for now.
+
