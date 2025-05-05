@@ -152,7 +152,7 @@ volumes:
 ![Screenshot from 2025-05-03 20-14-19](https://github.com/user-attachments/assets/8f7e6401-343b-4771-8e6d-dd8368b9bf6a)
 
 
-2. Now let's run the Docker Compose command using the file we created to start the PostgreSQL container on port 5432 (5432 the default port for PostgreSQL databases).
+2. let's run the Docker Compose command using the file we created to start the PostgreSQL container on port 5432 (5432 the default port for PostgreSQL databases).
 
 ```bash
 
@@ -355,7 +355,7 @@ pip install kafka-python psycopg2 pandas requests
 
 ```
 ## Navigate to scripts/ and Create the First Python Producer
-Now let's move into the scripts/ directory and create our first Python script. This script will simulate user registrations for a telecom company and send the generated data to a Kafka topic named user-registration.
+let's move into the scripts/ directory and create our first Python script. This script will simulate user registrations for a telecom company and send the generated data to a Kafka topic named user-registration.
 
 
 ```bash
@@ -969,7 +969,7 @@ real_time_dashboard_via_api.py - Real-time Streamlit dashboard fetching and disp
 
 ![output9](https://github.com/user-attachments/assets/17a3b0ba-db46-4185-9ec1-759ea05a1ef6)
 
-## Now Streamlit fetches data from the API, which in turn pulls from PostgreSQL. Next, I'll demonstrate the full real-time pipeline — from starting Kafka and streaming messages, to displaying the data live in Streamlit on the website.
+## Streamlit fetches data from the API, which in turn pulls from PostgreSQL. Next, I'll demonstrate the full real-time pipeline — from starting Kafka and streaming messages, to displaying the data live in Streamlit on the website.
 
 ### Before demonstrating real-time activity updates, I'll clear the data in the database table to make it look clean.
 
