@@ -941,4 +941,10 @@ def user_activity(user_id: int):
 
 
 ```
+4) Running the app
 
+```bash
+
+uvicorn main:app --reload
+
+```
