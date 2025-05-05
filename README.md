@@ -967,3 +967,8 @@ Yes, I could have installed a browser extension or formatted the JSON output in 
 
 real_time_dashboard_via_api.py - Real-time Streamlit dashboard fetching and displaying user activity via API
 
+![output9](https://github.com/user-attachments/assets/17a3b0ba-db46-4185-9ec1-759ea05a1ef6)
+
+## Now Streamlit fetches data from the API, which in turn pulls from PostgreSQL. Next, I'll demonstrate the full real-time pipeline — from starting Kafka and streaming messages, to displaying the data live in Streamlit on the website.
+
+### Before demonstrating real-time activity updates, I'll clear the data in the database table to make it look clean.
